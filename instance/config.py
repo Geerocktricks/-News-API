@@ -1,0 +1,2 @@
+NEWS_API_KEY='98dea97de1bb43c8bbdbf37abaa9d66b'
+SECURITY_KEY='1921'
