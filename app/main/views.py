@@ -25,7 +25,9 @@ def articles(id):
     '''
     view source page function that returns the source details page and its data
     '''
-    
+    message = 'GERALD mag.'
+    Trending = 'Trending'
+    title = 'Gerald mag...'
     articles = get_articles(id)
 
-    return render_template('source.html',articles=articles)    
+    return render_template('index.html' ,  message = message ,'source.html',articles=articles , Trending = Trending , title = title)    
