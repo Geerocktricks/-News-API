@@ -4,62 +4,72 @@
 <!-- Styles block -->
 
 {% block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
 <!-- Content block -->
+
 <body>
     {% block content %}
-<div class="row">
-    <div class="col-md-12 jumbotron">
-        <!-- Holds the heading -->
-        <div class="Heading col-lg-7 ">
+    <div class="row">
+        <div class="col-md-12 jumbotron">
+            <!-- Holds the heading -->
+            <div class="Heading col-lg-7 ">
                 <h6><i>TRENDING STORIES</i></h6>
                 <h2><strong>GERALD mag..</strong></h2>
-        </div>
-        <!-- holds the input form-->
-        <div class="col-lg-3  input">
-                <form >
-                    <input type="text" name="movie_query" placeholder="Search....." class="form-control">
-                    
-                </form>
-        </div>
-        <div class="col-lg-1 button">
+            </div>
+            <!-- holds the input form-->
+            <div class="col-lg-3  input">
                 <form>
-                    <input type="submit"  value="Search" class="btn btn-bage">
-                </form>
-        </div>
-    </div>
-</div>
-<div class="container">
+                    <input type="text" name="movie_query" placeholder="Search....." class="form-control">
 
-    <div class="row ">
-        <div class="col-md-12 ">
-            <!-- news -->
-            <h3 class="Sub-heading card col-md-2"> News</h3>
-            <ul>
-                {{ macro.displayNewsList(general)}}
-            </ul>
+                </form>
+            </div>
+            <div class="col-lg-1 button">
+                <form>
+                    <input type="submit" value="Search" class="btn btn-bage">
+                </form>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12  ">
-            <!-- Fashion -->
-            <h3 class="Fashion"> <span>Fashion</span> </h3>
+    <div class="container">
+
+        <div class="row ">
+            <div class="col-md-12 ">
+                <!-- news -->
+                <h3 class="Sub-heading card col-md-2"> News</h3>
+                <ul>
+                    {{ macro.displaySourceList(general)}}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12  card bg-info">
+                <!-- Fashion -->
+                <h3 class="Fashion"> <span>Entertainment</span> </h3>
+                <ul>
+                    {{ macro.displaySourceList(entertainment)}}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12  card bg-info ">
+                <!-- Sports -->
+                <h3 class="Sports"><span>Sports</span></h3>
+                <ul class="sports">
+                    {{ macro.displaySourceList(sports)}}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12  card bg-info">
+                <!-- Tech -->
+                <h3 class="Tech"><span>Tech</span></h3>
+                <ul>
+                    {{ macro.displaySourceList(technology)}}
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 ">
-            <!-- Sports -->
-        <h3 class="Sports"><span>Sports</span></h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12  ">
-            <!-- Tech -->
-            <h3 class="Tech"><span>Tech</span></h3>
-        </div>
-    </div>
-</div>
-{% endblock%}
+    {% endblock%}
 </body>
